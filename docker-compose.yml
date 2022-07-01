@@ -3,8 +3,8 @@ services:
   web:
     build: .
     ports:
-      - "6000:6000"
-    command: python manage.py runserver 0.0.0.0:6000
+      - "5000:5000"
+    command: python manage.py runserver 0.0.0.0:5000
     volumes:
       - .:/code  
 
