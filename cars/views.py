@@ -10,10 +10,10 @@ class CarViewSet(ModelViewSet):
     queryset=Car.objects.all()
     serializer_class = CarSerializer
 
-    def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset().filter(created_by=get_client_ip(request))
-        serialized = CarSerializer(queryset, many=True)
-        return Response(serialized.data)
+    # def list(self, request, *args, **kwargs):
+    #     queryset = self.get_queryset().filter(created_by=get_client_ip(request))
+    #     serialized = CarSerializer(queryset, many=True)
+    #     return Response(serialized.data)
 
     def create(self, request, *args, **kwargs):
         car = Car.objects.create(
